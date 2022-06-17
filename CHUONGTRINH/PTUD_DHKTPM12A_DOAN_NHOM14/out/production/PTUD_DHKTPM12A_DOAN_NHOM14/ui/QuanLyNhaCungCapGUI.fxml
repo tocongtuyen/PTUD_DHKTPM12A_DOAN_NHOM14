@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NhaCungCapController">
+    <top>
+        <AnchorPane prefHeight="60.0" prefWidth="900.0" style="-fx-background-color: #1a7dc4;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="254.0" layoutY="8.0" text="QUẢN LÝ NHÀ CUNG CẤP" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font></Label>
+                <JFXButton cancelButton="true" contentDisplay="GRAPHIC_ONLY" layoutX="827.0" layoutY="5.0" onAction="#backMain" prefHeight="54.0" prefWidth="37.0" text="Tìm">
+                    <graphic>
+                        <ImageView fitHeight="49.0" fitWidth="46.0" onMouseClicked="#backMain" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/home64.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <GridPane hgap="5.0" layoutX="14.0" layoutY="15.0" prefHeight="30.0" prefWidth="184.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="66.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="108.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Tài khoản:" textFill="WHITE">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblTaiKhoan" layoutX="10.0" layoutY="15.0" textFill="WHITE" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </top>
+    <center>
+        <AnchorPane prefHeight="639.0" prefWidth="901.0" style="-fx-background-color: #cdcdcd;" BorderPane.alignment="CENTER">
+            <children>
+                <TitledPane animated="false" collapsible="false" layoutX="1.0" layoutY="1.0" prefHeight="638.0" prefWidth="900.0" text="Thông tin nhà cung cấp">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="559.0" prefWidth="880.0" style="-fx-background-color: #ffffff;">
+                            <children>
+                                <GridPane prefHeight="314.0" prefWidth="869.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="10.0" prefWidth="103.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="745.0" minWidth="0.0" prefWidth="736.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="41.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="39.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="Tên nhà cung cấp" GridPane.rowIndex="2" />
+                                        <Label text="Số điện thoại" GridPane.rowIndex="4" />
+                                        <Label text="Email" GridPane.rowIndex="6" />
+                                        <Label text="Địa chỉ" GridPane.rowIndex="8" />
+                                        <Label text="Mã nhà cung cấp" />
+                                        <Label fx:id="errorTenNCC" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Label fx:id="errorSDT" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                        <Label fx:id="errorDiaChi" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                        <JFXTextField fx:id="txtMaNCC" disable="true" GridPane.columnIndex="1" />
+                                        <JFXTextField fx:id="txtTenNCC" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <JFXTextField fx:id="txtSDT" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <JFXTextField fx:id="txtEmail" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                        <JFXTextArea fx:id="txtDiaChi" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label fx:id="errorEmail" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                    </padding>
+                                </GridPane>
+                                <GridPane layoutY="319.0" prefHeight="30.0" prefWidth="870.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="105.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="104.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="108.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="106.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="7.0" prefWidth="106.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="125.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="182.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label prefHeight="17.0" prefWidth="117.0" text="Tìm tên nhà cung cấp" GridPane.columnIndex="5" />
+                                        <JFXTextField fx:id="txtTimKiem" GridPane.columnIndex="6" />
+                                        <Button fx:id="btnThem" focusTraversable="false" mnemonicParsing="false" onAction="#addNCC" prefHeight="30.0" prefWidth="85.0" text="Thêm">
+                                            <graphic>
+                                                <ImageView fx:id="imgThem" fitHeight="30.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../img/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnLuu" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#saveNCC" prefHeight="30.0" prefWidth="85.0" text="Lưu" GridPane.columnIndex="1">
+                                            <graphic>
+                                                <ImageView fitHeight="30.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../img/save.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnSua" disable="true" mnemonicParsing="false" onAction="#updateNCC" prefHeight="30.0" prefWidth="85.0" text="Sửa" GridPane.columnIndex="2">
+                                            <graphic>
+                                                <ImageView fx:id="imgSua" fitHeight="30.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../img/update.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnXoa" disable="true" mnemonicParsing="false" onAction="#deleteNCC" prefHeight="30.0" prefWidth="85.0" text="Xóa" GridPane.columnIndex="3">
+                                            <graphic>
+                                                <ImageView fitHeight="30.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../img/if_db_remove_3211.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="btnXuat" mnemonicParsing="false" onAction="#xuatFile" prefHeight="30.0" prefWidth="85.0" text="Xuất" GridPane.columnIndex="4">
+                                            <graphic>
+                                                <ImageView fitHeight="30.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../img/Excelicon.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                    <padding>
+                                        <Insets left="15.0" right="15.0" />
+                                    </padding>
+                                </GridPane>
+                                <TableView fx:id="tableNCC" focusTraversable="false" layoutX="15.0" layoutY="362.0" prefHeight="208.0" prefWidth="840.0">
+                                    <columns>
+                                        <TableColumn fx:id="columnMaNCC" prefWidth="108.0" text="Mã nhà cung cấp" />
+                                        <TableColumn fx:id="columnTenNCC" minWidth="0.0" prefWidth="172.0" text="Tên nhà cung cấp" />
+                                        <TableColumn fx:id="columnSDT" prefWidth="119.0" text="Số điện thoại" />
+                                        <TableColumn fx:id="columnEmail" prefWidth="200.0" text="Email" />
+                                        <TableColumn fx:id="columnDiaChi" prefWidth="240.0" text="Địa chỉ" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                    </padding>
+                </TitledPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
